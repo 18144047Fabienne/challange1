@@ -1,26 +1,74 @@
 body{
-	background-color: #222222;
+	background-color: #0E0E1F;
 	color: #666666;
 	font-family: verdana;
 	font-size: 40px;
 }
 
-#woonkamer {
-	position: relative;
-	width: 800px;
-	height: 574px;
-	background-color: #333333;
-	overflow: hidden;
+.container {
+
 	margin: 0 auto;
+	padding: 2em 1em;
+}
+header {
+	text-align: center;
+}
+#logo {
+	width: 180px;
+}
+nav {
+	margin: 2em auto 0;
+	max-width: 700px;
+}
+nav ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+}
+nav ul li{
+	list-style: none;
+	background-color: #A7A5CA;
+	padding: 19px;
+	margin: 10px;
+	border-radius: 25px;
+}
+nav ul li a{
+	color: white;
+	text-decoration: none;
+}
+main {
+	display: flex;
+	flex-flow: column;
+}
+.hero {
+	text-align: center;
+}
+.hero h1{
+	font-size: 2.5em;
+	font-weight: 700;
+}
+.hero p{
+	font-size: 1.2em;
+	font-weight: 600;
+	max-width: 500px;
+	line-height: 1.8em;
+	margin: 3em auto;
+}
+.hero p:before {
+	content: "";
+	display: block;
+	width: 120px;
+	border: 2px solid #00F8FF;
+	margin: 1em auto;
+}
+.hero a {
+	background: 1em;
+	padding: 1em 3em;
+	border-radius: 50px;
+	color: white;
+	text-decoration: none;
+	font-size: 1.375em;
+	font-weight: 400;
 }
 
-#gerrit	 {
-	top: 360px;
-	left: 20px;
-	width: 200px;
-	height: 164px;
-}
-
-img {
-	position: absolute;
-}

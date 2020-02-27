@@ -2,16 +2,77 @@
 <html lang="nl">
 	<head>
 		<meta charset="UTF-8" />
-		<title>gerrit</title>
+		<title>challange1</title>
 		<link type="text/css" href="styles/my_style.css" rel="stylesheet" />
 		<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="scripts/my_scripts.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 	</head>
 	<body>
-		<section id="woonkamer">
-			<img id="background" src="images/background.jpg" />
-			<img id="gerrit" src="images/gerrit.png" />
-		</section>
-		<p>Spongebob Squarepants, Nickelodeon Animation Studios 1999</p>
+		<header class="container">
+			<div class="logo">
+				<figure>
+					<img src="images/gerrit.png" alt ="#">
+				</figure>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">features</a></li>
+					<li class="highlight"><a href="#">learn more</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<section class="hero container">
+				<h1>Voorraden</h1>
+				<p>Lorum ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</section>
+			<div id="chart_div">
+				 <!--Load the AJAX API-->
+			    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+			    <script type="text/javascript">
+
+			      // Load the Visualization API and the corechart package.
+			      google.charts.load('current', {'packages':['corechart']});
+
+			      // Set a callback to run when the Google Visualization API is loaded.
+			      google.charts.setOnLoadCallback(drawChart);
+
+			      // Callback that creates and populates a data table,
+			      // instantiates the pie chart, passes in the data and
+			      // draws it.
+			      function drawChart() {
+
+			        // Create the data table.
+			        var data = new google.visualization.DataTable();
+			        data.addColumn('string', 'Topping');
+			        data.addColumn('number', 'Slices');
+			        data.addRows([
+			          ['Water', 5],
+			          ['Voedsel', 3]
+			        ]);
+
+			        // Set chart options
+			        var options = {'width':900,
+			                       'backgroundColor': {fill:"transparent"},
+			                       'is3D': true,
+			                       'legend': {position:"labeled", textStyle: {color:"white", fontSize:28}},
+			                       'colors': ["#A7A5CA", "#00F8FF"],
+			                       'height':500};
+
+			        // Instantiate and draw our chart, passing in some options.
+			        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+			        chart.draw(data, options);
+			      }
+			    </script>
+   			 </div>
+			<div class="device">
+				<a href="#">Go to app store</a>
+				<figure>
+					<img src="#" alt ="#">
+				</figure>
+			</div>
+		</main>
 	</body>
 </html>
