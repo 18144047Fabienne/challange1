@@ -53,11 +53,56 @@
 		<nav>
 			<ul>
 	          <li><a href="#">Home</a></li>
-	          <li><a href="#">features</a></li>
-	          <li class="highlight"><a href="#">learn more</a></li>
+	          <li><a href="#">Persoonlijk</a></li>
+	          <li class="highlight"><a href="#">Tools</a></li>
         	</ul>
 		</nav>
 		<header>
+			<article>
+				<h1>Afstand in Tijd</h1>
+			</article>
+			 <div id="chart" style="width: 100%; height: 500px;">
+			 	    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+			    <script type="text/javascript">
+			      google.charts.load('current', {'packages':['corechart']});
+			      google.charts.setOnLoadCallback(drawChart);
+
+			      function drawChart() {
+			        var data = google.visualization.arrayToDataTable([
+			          ['Year', 'Sales', 'Expenses'],
+			          ['2013',  1000,      400],
+			          ['2014',  1170,      460],
+			          ['2015',  660,       1120],
+			          ['2016',  1030,      540]
+			        ]);
+
+			        var options = {
+			          title: 'afstand in km', titleTextStyle: {color: "white"},
+			          'backgroundColor': {fill:"#1E1D31"},
+			          'colors': ["#A7A5CA", "#00F8FF"],
+			          hAxis: {title: 'Jaren', textStyle: {color:"white", fontSize:14}, titleTextStyle: {color: 'white'}},
+			          'legend': {position:"labeled", textStyle: {color:"white", fontSize:14}},
+			          vAxis: {minValue: 0, textStyle: {color:"white", fontSize:14}}
+			        };
+
+			        var chart = new google.visualization.AreaChart(document.getElementById('chart'));
+			        chart.draw(data, options);
+			      }
+			    </script>
+			
+			 <article>
+				Buurtsuper Leo bestaat al sinds 1977. Sinds kort zijn wij begonnen met het bezorgen van onze producten. Dit doen wij met veel zorg voor onze klanten. Wij zijn dan wel een buurtsuper, maar wij bezorgen alles, altijd en overal. Wilt u bijvoorbeeld boodschappen voor uw medewerkers? Geen probleem, wij bezorgen het!
+			</article>
+
+			
+			<!--<section class="aside">
+				<figure>
+					<img class="fotos" src="bezorgmannetje.png" alt="bezorgmannetje">
+			</figure>
+			</section>-->
+		</header>
+		<section class="afstand">
+			<article><h1>Check uw voorraden</h1></article>
 			<div id="chart_div">
          <!--Load the AJAX API-->
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -84,8 +129,8 @@
               ]);
 
               // Set chart options
-              var options = {'width':370,
-                             'backgroundColor': {fill:"#0E0E1F"},
+              var options = {'width':350,
+                             'backgroundColor': {fill:"#1E1D31"},
                              'is3D': true,
                              'legend': {position:"labeled", textStyle: {color:"white", fontSize:14}},
                              'colors': ["#A7A5CA", "#00F8FF"],
@@ -98,42 +143,15 @@
           </script>
          </div>
 			<article>
-				<h1>De Buurtsuper die bezorgd</h1>
 				Buurtsuper Leo bestaat al sinds 1977. Sinds kort zijn wij begonnen met het bezorgen van onze producten. Dit doen wij met veel zorg voor onze klanten. Wij zijn dan wel een buurtsuper, maar wij bezorgen alles, altijd en overal. Wilt u bijvoorbeeld boodschappen voor uw medewerkers? Geen probleem, wij bezorgen het!
 			</article>
-			<section class="buttons">
-				<a href="index.html"><button class="hoofdbutton">bestellen &gt;</button></a>
-			</section>
-			<!--<section class="aside">
-				<figure>
-					<img class="fotos" src="bezorgmannetje.png" alt="bezorgmannetje">
-			</figure>
-			</section>-->
-		</header>
-		<section class="producten">
-			<figure>
-				<img class="fotos" src="boerderij.png" alt="foto van een aardappel veld met zakken aardappels in het midden.">
-			</figure>
-			<article>
-				<h1>Verse groenten en fruit</h1>
-				Onze verse groenten en fruit worden van de beste boeren gekocht. Wat is er lekkerder als een stukje fruit gezond voor bij de lunch of na de avondmaal. Elke dag word ons assortiment aangevuld met vers fruit, bestel het mee voor bij de lunch! 
-			</article>
-			<section class="buttons">
-				<a href="index.html"><button class="hoofdbutton">producten &gt;</button></a>
-			</section>
 		</section>
 		<section  class="samenwerking">
-			<figure>
-				<img class="fotos" src="spar_6.jpg" alt="foto van een winkelwagentje met het logo van SPAR erop.">
-			</figure>
 			<article>
 				<h1>Samenwerkingen</h1>
 				Buurtsupermarkt Leo van der Drift is lid van SPAR. Zo profiteert u van verse producten tegen betaalbare prijzen.
 				Ook hebben wij elke dag vers brood van de warme bakker Laurens Bosman uit Rijswijk. Ook bakken wij zelf bepaalde broodjes zoals croisants, stokbrood ook appelflappen bakken we zelf lekker voor bij de koffie. We werken dus nauw samen met lokale bedrijven!
 			</article>
-			<section class="buttons">
-				<a href="index.html"><button class="hoofdbutton">meer weten &gt;</button></a>
-			</section>
 		</section>
 		<section  class="locatie">
 			<figure>

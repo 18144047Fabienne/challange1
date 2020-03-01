@@ -19,7 +19,7 @@ body {
 		"logo"
 		"nav"
 		"header"
-		"producten"
+		"afstand"
 		"samenwerking"
 		"locatie"
 		"footer";
@@ -37,20 +37,20 @@ body {
 nav {
 	grid-area: nav;
 	display: block;
-  margin: 2em auto 0;
+  margin: 10px 0px 10px 0px;
   max-width: 700px;
 }
 nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 nav ul li{
   list-style: none;
   background-color: #A7A5CA;
-  padding: 19px;
-  margin: 10px;
+  padding: 15px 30px 15px 30px;
+  margin: 5px;
   border-radius: 25px;
 }
 nav ul li a{
@@ -141,13 +141,20 @@ h1 {
 }
 header {
 	grid-area: header;
-
+	margin: 15px;
+	background-color: #1E1D31;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
+	-moz-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
+	box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
 }
 header div {
 	margin: auto;
 	padding: 0;
 }
-
+.afstand div {
+	color: white;
+}
 /*content*/
 
 .buttons {
@@ -175,12 +182,23 @@ article {
 	font-size: 18px;
 	line-height: 28px;
 }
-.producten {
-	grid-area: producten;
+.afstand {
+	grid-area: afstand;
+	margin: 15px;
+	background-color: #1E1D31;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
+	-moz-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
+	box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
 }
 .samenwerking {
 	grid-area: samenwerking;
-	background-color: white;
+	margin: 15px;
+	background-color: #1E1D31;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
+	-moz-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
+	box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
 }
 .locatie {
 	grid-area: locatie;
@@ -232,7 +250,7 @@ h1 {
 }
 
 #myBtn:hover {
-  background-color: #FDA105;
+  background-color: #00F8FF;
   cursor: pointer;
 }
 .button.cart {
@@ -281,7 +299,7 @@ footer{
 		grid-template-areas: 
 			"nav nav"
 			"header header"
-			"producten samenwerking"
+			"afstand samenwerking"
 			"locatie locatie"
 			"footer footer";
 	}
