@@ -9,6 +9,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="styles/my_style.css" type="text/css">
+ 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script>
 			//navigatie//
@@ -45,11 +46,37 @@
 			  document.documentElement.scrollTop = 0; 
 			}
 		</script>
+		<!--km in tijd-->
+		 <script type="text/javascript">
+			      google.charts.load('current', {'packages':['corechart']});
+			      google.charts.setOnLoadCallback(drawChart);
+
+			      function drawChart() {
+			        var data = google.visualization.arrayToDataTable([
+			          ['Year', 'Aantal km in aantal maanden'],
+			          ['2',      3125000],
+			          ['4',      6250000],
+			          ['6',       37500000],
+			          ['8',      225000000]
+			        ]);
+
+			        var options = {
+			          title: 'afstand in km', titleTextStyle: {color: "white"},
+			          'backgroundColor': {fill:"#1E1D31"},
+			          'colors': ["#00F8FF"],
+			          hAxis: {title: 'Maanden', textStyle: {color:"white", fontSize:14}, titleTextStyle: {color: 'white'}},
+			          'legend': {position:"labeled", textStyle: {color:"white", fontSize:14}},
+			          vAxis: {minValue: 0, textStyle: {color:"white", fontSize:14}}
+			        };
+
+			        var chart = new google.visualization.AreaChart(document.getElementById('chart_afstand'));
+			        chart.draw(data, options);
+			      }
+			    </script>
+		<!--end km in tijd-->
 	</head>
 	<body>
-		<section class="logo">
-			<figure id="logo"><img src="images/gerrit.png" alt="logo"></figure>
-		</section>
+		<figure><img src="images/logo.png" alt="logo" class="logo"></figure>
 		<nav>
 			<ul>
 	          <li><a href="#">Home</a></li>
@@ -59,39 +86,11 @@
 		</nav>
 		<header>
 			<article>
-				<h1>Afstand in Tijd</h1>
+				<h1>Uw reisperiode</h1>
 			</article>
-			 <div id="chart" style="width: 100%; height: 500px;">
-			 	    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-			    <script type="text/javascript">
-			      google.charts.load('current', {'packages':['corechart']});
-			      google.charts.setOnLoadCallback(drawChart);
-
-			      function drawChart() {
-			        var data = google.visualization.arrayToDataTable([
-			          ['Year', 'Sales', 'Expenses'],
-			          ['2013',  1000,      400],
-			          ['2014',  1170,      460],
-			          ['2015',  660,       1120],
-			          ['2016',  1030,      540]
-			        ]);
-
-			        var options = {
-			          title: 'afstand in km', titleTextStyle: {color: "white"},
-			          'backgroundColor': {fill:"#1E1D31"},
-			          'colors': ["#A7A5CA", "#00F8FF"],
-			          hAxis: {title: 'Jaren', textStyle: {color:"white", fontSize:14}, titleTextStyle: {color: 'white'}},
-			          'legend': {position:"labeled", textStyle: {color:"white", fontSize:14}},
-			          vAxis: {minValue: 0, textStyle: {color:"white", fontSize:14}}
-			        };
-
-			        var chart = new google.visualization.AreaChart(document.getElementById('chart'));
-			        chart.draw(data, options);
-			      }
-			    </script>
-			
+			 <div id="chart_afstand"></div>
 			 <article>
-				Buurtsuper Leo bestaat al sinds 1977. Sinds kort zijn wij begonnen met het bezorgen van onze producten. Dit doen wij met veel zorg voor onze klanten. Wij zijn dan wel een buurtsuper, maar wij bezorgen alles, altijd en overal. Wilt u bijvoorbeeld boodschappen voor uw medewerkers? Geen probleem, wij bezorgen het!
+				Onze reis van de Aarde naar de maan kost ons 8 maanden. SpaceX zorgt ervoor dat u d.m.v. de bovenstaande tabel kunt zien hoeveel kilometer we afleggen per 2 maanden. Zo bent u altijd op de hoogte!.
 			</article>
 
 			

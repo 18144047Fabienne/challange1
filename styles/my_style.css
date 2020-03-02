@@ -75,8 +75,11 @@ a:hover {
 }
 .logo {
 	grid-area: logo;
-	margin: 0 auto;
+	margin: 15px;
+	width: 200px;
+	height: 80px;
 }
+
 .zoekbalk {
 	display: none;
 }
@@ -379,6 +382,7 @@ footer{
 		width: 50%;
 		height: auto;
 	}
+
 /*search*/
 
 	.button.search{
