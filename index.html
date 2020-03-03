@@ -74,6 +74,72 @@
 			      }
 			    </script>
 		<!--end km in tijd-->
+		<!--voorraden-->
+		 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+          <script type="text/javascript">
+
+            google.charts.load('current', {'packages':['corechart']});
+
+            google.charts.setOnLoadCallback(drawChart);
+
+
+            function drawChart() {
+
+              // Create the data table.
+              var data = new google.visualization.DataTable();
+              data.addColumn('string', 'Topping');
+              data.addColumn('number', 'Slices');
+              data.addRows([
+                ['Water', 5],
+                ['Voedsel', 3]
+              ]);
+
+              var options = {'width':350,
+                             'backgroundColor': {fill:"#1E1D31"},
+                             'is3D': true,
+                             'legend': {position:"labeled", textStyle: {color:"white", fontSize:14}},
+                             'colors': ["#A7A5CA", "#00F8FF"],
+                             'height':300};
+
+              var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+              chart.draw(data, options);
+            }
+          </script>
+		<!--end voorraden-->
+		<!--timeline voorraden-->
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+		<script type="text/javascript">
+		  google.charts.load("current", {packages:["timeline"]});
+		  google.charts.setOnLoadCallback(drawChart);
+		  function drawChart() {
+
+		    var container = document.getElementById('example5.1');
+		    var chart = new google.visualization.Timeline(container);
+		    var dataTable = new google.visualization.DataTable();
+		    dataTable.addColumn({ type: 'string', id: 'Room' });
+		    dataTable.addColumn({ type: 'string', id: 'Name' });
+		    dataTable.addColumn({ type: 'date', id: 'Start' });
+		    dataTable.addColumn({ type: 'date', id: 'End' });
+		    dataTable.addRows([
+		      [ 'Eten en water', ' ',       new Date(0,0,0,2,0,0),  new Date(0,0,0,3,30,0) ],
+		      [ 'Eten en water', ' ',    new Date(0,0,0,4,0,0),  new Date(0,0,0,5,30,0) ],
+		      [ 'Eten en water', ' ',        new Date(0,0,0,6,0,0),  new Date(0,0,0,7,30,0) ],
+		      [ 'verzorgings producten',   'verzorgings producten', new Date(0,0,0,4,30,0), new Date(0,0,0,6,0,0) ]]);
+
+		    var options = {
+		      timeline: { colorByRowLabel: true, },
+		      'colors': ["#A7A5CA", "#00F8FF"],
+		      'backgroundColor': {fill:"#1E1D31"},
+		       timeline: { rowLabelStyle: {fontName: 'Arial', fontSize: 12, color: 'white', textStyle: {color:"white" }},
+                     barLabelStyle: { fontName: 'Arial', fontSize: 12, color: 'white', textStyle: {color:"white" } } }
+		    };
+
+		    chart.draw(dataTable, options);
+		  }
+
+		</script>
+		<!--end timeline voorraden-->
 	</head>
 	<body>
 		<figure><img src="images/logo.png" alt="logo" class="logo"></figure>
@@ -102,99 +168,26 @@
 		</header>
 		<section class="afstand">
 			<article><h1>Check uw voorraden</h1></article>
-			<div id="chart_div">
-         <!--Load the AJAX API-->
-          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-          <script type="text/javascript">
-
-            // Load the Visualization API and the corechart package.
-            google.charts.load('current', {'packages':['corechart']});
-
-            // Set a callback to run when the Google Visualization API is loaded.
-            google.charts.setOnLoadCallback(drawChart);
-
-            // Callback that creates and populates a data table,
-            // instantiates the pie chart, passes in the data and
-            // draws it.
-            function drawChart() {
-
-              // Create the data table.
-              var data = new google.visualization.DataTable();
-              data.addColumn('string', 'Topping');
-              data.addColumn('number', 'Slices');
-              data.addRows([
-                ['Water', 5],
-                ['Voedsel', 3]
-              ]);
-
-              // Set chart options
-              var options = {'width':350,
-                             'backgroundColor': {fill:"#1E1D31"},
-                             'is3D': true,
-                             'legend': {position:"labeled", textStyle: {color:"white", fontSize:14}},
-                             'colors': ["#A7A5CA", "#00F8FF"],
-                             'height':300};
-
-              // Instantiate and draw our chart, passing in some options.
-              var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-              chart.draw(data, options);
-            }
-          </script>
-         </div>
+			<div id="chart_div"></div>
 			<article>
-				Buurtsuper Leo bestaat al sinds 1977. Sinds kort zijn wij begonnen met het bezorgen van onze producten. Dit doen wij met veel zorg voor onze klanten. Wij zijn dan wel een buurtsuper, maar wij bezorgen alles, altijd en overal. Wilt u bijvoorbeeld boodschappen voor uw medewerkers? Geen probleem, wij bezorgen het!
+				In de bovenstaande cirkeldiagram kunt u de hoeveelheid aan voorraad zien.
 			</article>
 		</section>
 		<section  class="samenwerking">
-			<article>
-				<h1>Samenwerkingen</h1>
-				Buurtsupermarkt Leo van der Drift is lid van SPAR. Zo profiteert u van verse producten tegen betaalbare prijzen.
-				Ook hebben wij elke dag vers brood van de warme bakker Laurens Bosman uit Rijswijk. Ook bakken wij zelf bepaalde broodjes zoals croisants, stokbrood ook appelflappen bakken we zelf lekker voor bij de koffie. We werken dus nauw samen met lokale bedrijven!
-			</article>
+			<div class="raket">
+				<figure><img src="images/raket.png" alt="raket"></figure>
+			</div>
+			<!--<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by upklyak - www.freepik.com</a>-->
 		</section>
 		<section  class="locatie">
-			<figure>
-				<img class="fotos" src="locatie.JPG" alt="foto van de locatie van Leo buurtsuper. De locatie is gefocust op Den Haag.">
-			</figure>
-			<article>
-				<h1>Adres</h1>
-				straat, nr.: erasmusweg, 4
-				<br />postcode: 2532 CP Den Haag
-				<br />
-				<br />tel: 070 3104577
-				<br />e-mail: leobuurtsuper@gmail.com
-			</article>
-			<article>
-				<h1>openingstijden</h1>
-				ma t/m vrijdag
-				<br />7:30 - 19:00
-				<br />zaterdag & zondag:
-				10:00 - 19:00
-			</article>
+			<article><h1>Aanvulling voorraden</h1></article>
+			<div id="example5.1"></div>
 		</section>
 		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 		<footer>
-				<ul  class="footer">
-					<li>
-						<div class="footer-logo">
-						<a href="index.html"><img src="bezorgbus.png" alt="logo" width="140px"  /></a>
-						</div>
-					</li>
-					<li class="footer-item"><a href="#">Home</a></li>
-					<li class="footer-item"><a href="#">producten</a></li>
-					<li class="footer-item"><a href="#">over ons</a></li>
-					<li class="footer-item"><a href="#">contact</a></li>
-					<li class="socials">
-						<div>
-							<a href="index.html"><img src="linkedin.png" alt="logo" width="80px"  /></a>
-						</div>
-					</li>
-					<li class="socials">
-						<div>
-							<a href="cart.html"><img src="facebook.png" alt="winkelmand" width="70px" height="70px"/></a>
-						</div>
-					</li>
-				</ul>
+				<div class="footer-logo">
+					<a href="index.html"><img src="images/logo.png" alt="logo" width="140px"  /></a>
+				</div>
 		</footer>
 	</body>
 </html>

@@ -37,14 +37,13 @@ body {
 nav {
 	grid-area: nav;
 	display: block;
-  margin: 10px 0px 10px 0px;
-  max-width: 700px;
+	margin: 10px 0px 10px 0px;
 }
 nav ul {
-  margin: 0;
+  margin: 15px;
   padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 nav ul li{
   list-style: none;
@@ -78,61 +77,8 @@ a:hover {
 	margin: 15px;
 	width: 200px;
 	height: 80px;
+	justify-content: center;
 }
-
-.zoekbalk {
-	display: none;
-}
-
-/*mobiel menu*/
-
-.menu{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-}
-.toggle{
-	order:1;
-}
-.item.button{
-	order:3;
-}
-.item{
-	width:100%;
-	text-align: center;
-	order: 2;
-	display: none;
-}
-.item.active{
-	display:block;
-}
-
-.toggle {
-	cursor: pointer;
-}
-.bars{
-	background: #999;
-	display: inline-block;
-	height: 2px;
-	position: relative;
-	width: 18px;
-}
-.bars::before,.bars::after{
-	background: #999;
-	content: "";
-	display: inline-block;
-	height: 2px;
-	position: absolute;
-	width: 18px;
-}
-.bars::before{
-	top: 5px;
-}
-.bars::after{
-	top: -5px;
-}
-
 
 /*eind navigatie*/
 
@@ -166,15 +112,7 @@ header div {
 	justify-content: space-between;
 	align-items: center;
 }
-.image {
-	content: url("mobiel-banner.png");
-	width:100%;
-	height: auto;
-}
-.fotos {
-	width: 100%;
-	height: auto;
-}
+
 section {
 	display: flex;
 	flex-direction: column;
@@ -196,16 +134,22 @@ article {
 }
 .samenwerking {
 	grid-area: samenwerking;
-	margin: 15px;
+		margin: 15px;
 	background-color: #1E1D31;
 	border-radius: 10px;
 	-webkit-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
 	-moz-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
 	box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
 }
+
 .locatie {
 	grid-area: locatie;
-	background-color: white;
+	margin: 15px;
+	background-color: #1E1D31;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
+	-moz-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
+	box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
 }
 
 h1 {
@@ -271,23 +215,11 @@ h1 {
 
 footer{
 	grid-area: footer;
-	background-color: #FDA105;
-}
-.footer {
+	background-color: #0E0E1F;
+		margin: 15px;
+	padding: 0;
 	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	background-color: transparent;
-	padding: 10px;
-	font-size: 18px;
-}
-.footer-item{
-	display:none;
-}
-.footer-logo{
-	display:none;
+	justify-content: left;
 }
 
 /*eind footer*/
@@ -297,139 +229,33 @@ footer{
 /*tablet*/
 
 	body {
-		grid-template-rows:  100px 1fr 1fr 1fr 100px;
+		grid-template-rows:  100px 100px 1fr 1fr 1fr 100px;
 		grid-template-columns:  1fr 1fr;
 		grid-template-areas: 
+			"logo logo"
 			"nav nav"
 			"header header"
 			"afstand samenwerking"
 			"locatie locatie"
 			"footer footer";
 	}
-	.image {
-		content: url("tabletfigmabanner.png");
-		width:100%;
-		height: auto;
-	}
-	.locatie {
-		text-align: center;
-	}
-	.locatie h1 {
-		text-align: center;
-	}
-	article {
-		font-size: 21px;
-		line-height: 28px;
-	}
 
-/*navigatie*/
-
-	.menu{
-		justify-content: space-around;
-	}
-	.button.cart {
-		padding:0;
-		background:transparent;
-	}
-	.logo{
-		flex:1;
-	}
-	.item.button{
-		width: auto;
-		order:1;
-		display: block;
-	}
-	.toggle{
-		order:2;
-	}
-	.item{
-		order: 3;
-	}
-	.button.secondary{
-		border: 0;
-	}
-	.button a{
-		text-decoration: none;
-		padding: 0;
-		background: transparent;
-	}
-	.button.secondary a{
-		background: transparent;
-	}
-	.button a:hover{
-		transition: all .25s;
-	}
-	.button:not(.secondary) a:hover{
-		background: #409A3C;
-		border-color: #727272;
-	}
-	.button.secondary a:hover{
-		color: #727272;
-		border-color: #727272;
-	}
-}
-
-/*einde navigatie*/
 
 @media screen and (min-width: 900px){
 /*laptop*/
 
-	article {
-		font-size: 21px;
-		line-height: 32px;
-	}
-	.locatie img{
-		width: 50%;
-		height: auto;
+	body {
+		grid-template-rows:  100px 100px 1fr 1fr 1fr 100px;
+		grid-template-columns:  1fr 1fr;
+		grid-template-areas: 
+			"logo logo"
+			"nav nav"
+			"header header"
+			"afstand samenwerking"
+			"locatie locatie"
+			"footer footer";
 	}
 
-/*search*/
-
-	.button.search{
-		display:none;
-	}
-	.zoekbalk {
-		display: block;
-		order:2;
-	}
-	.zoek-button {
-		color:white;
-		background-color: #44A23F;
-		padding: 5px 7px;
-		border-style: none;
-	}
-	.zoek-button:hover{
-		background-color: #377933;
-	}
-	/*eind search*/
-	.logo{
-		display: none;
-	}
-	.logo-payoff{
-		display:block;
-	}
-	.item {
-		display: block;
-		width: auto;
-	}
-	.toggle {
-		display:none;
-	}
-	.logo{
-		order: 0;
-	}
-	.item{
-		order:1;
-	}
-	.button{
-		order:2;
-	}
-	.menu li{
-		padding: 15px 10px;
-	}
-	.menu li.button{
-		padding-right: 0;
-	}
 /*footer*/
 	.footer-logo {
 		display: flex;
@@ -456,6 +282,7 @@ footer{
 	h1{
 		font-size: 36px;
 		padding: 20px 0px;
+		text-align: left;
 	}
 	article {
 		font-size: 24px;
@@ -464,7 +291,9 @@ footer{
 	.locatie img{
 		width: 50%;
 		height: auto;
+		padding: 10px;
 	}
+
 }
 
 
