@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>challenge1</title>
+		<meta http-equiv="refresh" content="30" /> <!--google charts zijn alleen responsive als je de page refreshed-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Teko|Work+Sans&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="styles/my_style.css" type="text/css">
+ 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+			//navigatie//
+
+			$(function() {
+			    
+				$(".toggle").on("click", function(){
+
+					if($(".item").hasClass("active")){
+						$(".item").removeClass("active");
+					}
+
+					else{
+						$(".item").addClass("active");
+					}
+				})
+
+			});
+
+			//button//
+			window.onscroll = function() {scrollFunction()};
+
+			function scrollFunction() {
+			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			    document.getElementById("myBtn").style.display = "block";
+			  } else {
+			    document.getElementById("myBtn").style.display = "none";
+			  }
+			}
+
+			// back tot op button; scrollt terug naar header
+			function topFunction() {
+			  document.body.scrollTop = 0; 
+			  document.documentElement.scrollTop = 0; 
+			}
+		</script>
+		<!--km in tijd-->
+		 <script type="text/javascript">
+			      google.charts.load('current', {'packages':['corechart']});
+			      google.charts.setOnLoadCallback(drawChart);
+
+			      function drawChart() {
+			        var data = google.visualization.arrayToDataTable([
+			          ['Year', 'Versnelling'],
+			          ['1',      9.81],
+			          ['2',      19.62],
+			          ['3',       29.4],
+			          ['4',     39.24]
+			        ]);
+
+			        var options = {
+			          title: 'G-kracht', titleTextStyle: {color: "white"},
+			          'backgroundColor': {fill:"#1E1D31"},
+			          'colors': ["#00F8FF"],
+			          hAxis: {title: 'M/s2', textStyle: {color:"white", fontSize:14}, titleTextStyle: {color: 'white'}},
+			          'legend': {position:"labeled", textStyle: {color:"white", fontSize:14}},
+			          vAxis: {minValue: 0, textStyle: {color:"white", fontSize:14}}
+			        };
+
+			        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+			        chart.draw(data, options);
+			      }
+			    </script>
+		<!--end km in tijd-->
+		<!--voorraden-->
+		    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+			    <script type="text/javascript">
+			      google.charts.load('current', {'packages':['bar']});
+			      google.charts.setOnLoadCallback(drawChart);
+
+			      function drawChart() {
+			        var data = google.visualization.arrayToDataTable([
+			          ['Year', 'Sales', 'Expenses', 'Profit'],
+			          ['2014', 1000, 400, 200],
+			          ['2015', 1170, 460, 250],
+			          ['2016', 660, 1120, 300],
+			          ['2017', 1030, 540, 350]
+			        ]);
+
+			        var options = {
+			          chart: {
+			            title: 'Company Performance',
+			            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+			          }
+			        };
+
+			        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+			        chart.draw(data, options);
+			      }
+			    </script>
+
+		  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Brandstof', 80],
+          ['Snelheid', 55],
+          ['Acceleratie', 68]
+        ]);
+
+        var options = {
+          width: 500, height: 120,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chartmap'));
+
+        chart.draw(data, options);
+
+        setInterval(function() {
+          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 13000);
+        setInterval(function() {
+          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 5000);
+        setInterval(function() {
+          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+          chart.draw(data, options);
+        }, 26000);
+      }
+    </script>
+	</head>
+	<body>
+		<figure><img src="images/logo.png" alt="logo" class="logo"></figure>
+		<nav>
+			<ul>
+	          <li><a href="index.html">Persoonlijk</a></li>
+	          <li><a href="tools.html">Tools</a></li>
+        	</ul>
+		</nav>
+		<header>
+			<article>
+				<h1>G-krachten</h1>
+			</article>
+			 <div id="chart_div"></div>
+			 <article>
+				Hier kunt u de valversnelling zien die u tijdens uw reis meemaakt.
+			</article>
+		</header>
+		<section class="afstand">
+			<article><h1>Voertuiginformatie</h1></article>
+			<div id="chartmap"></div>
+		</section>
+		<section  class="samenwerking">
+				<figure><img src="images/raket10.png" alt="raket" class="raket2" ></figure>
+			<!--<a href="https://www.freepik.com/free-photos-vectors/business">Business vector created by upklyak - www.freepik.com</a>-->
+			<!--<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by pikisuperstar - www.freepik.com</a>-->
+			<!--<a href="https://www.freepik.com/free-photos-vectors/business">Business vector created by upklyak - www.freepik.com</a>-->
+		</section>
+
+		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+		<footer>
+				<div class="footer-logo">
+					<figure><img src="images/logo.png" alt="logo" class="logo"></figure>
+				</div>
+		</footer>
+	</body>
+</html>

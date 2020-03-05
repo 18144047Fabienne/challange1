@@ -3,8 +3,11 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>challenge1</title>
+		<meta http-equiv="refresh" content="30" /> <!--google charts zijn alleen responsive als je de page refreshed-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Teko|Work+Sans&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
@@ -122,10 +125,10 @@
 		    dataTable.addColumn({ type: 'date', id: 'Start' });
 		    dataTable.addColumn({ type: 'date', id: 'End' });
 		    dataTable.addRows([
-		      [ 'Eten en water', ' ',       new Date(0,0,0,2,0,0),  new Date(0,0,0,3,30,0) ],
-		      [ 'Eten en water', ' ',    new Date(0,0,0,4,0,0),  new Date(0,0,0,5,30,0) ],
-		      [ 'Eten en water', ' ',        new Date(0,0,0,6,0,0),  new Date(0,0,0,7,30,0) ],
-		      [ 'verzorgings producten',   'verzorgings producten', new Date(0,0,0,4,30,0), new Date(0,0,0,6,0,0) ]]);
+		      [ 'Voedsel', ' ',       new Date(0,0,0,2,0,0),  new Date(0,0,0,3,30,0) ],
+		      [ 'Voedsel', ' ',    new Date(0,0,0,4,0,0),  new Date(0,0,0,5,30,0) ],
+		      [ 'Voedsel', ' ',        new Date(0,0,0,6,0,0),  new Date(0,0,0,7,30,0) ],
+		      [ 'verzorgings producten',   ' .', new Date(0,0,0,4,30,0), new Date(0,0,0,6,0,0) ]]);
 
 		    var options = {
 		      timeline: { colorByRowLabel: true, },
@@ -145,9 +148,8 @@
 		<figure><img src="images/logo.png" alt="logo" class="logo"></figure>
 		<nav>
 			<ul>
-	          <li><a href="#">Home</a></li>
-	          <li><a href="#">Persoonlijk</a></li>
-	          <li class="highlight"><a href="#">Tools</a></li>
+	          <li><a href="index.html">Persoonlijk</a></li>
+	          <li><a href="tools.html">Tools</a></li>
         	</ul>
 		</nav>
 		<header>
@@ -158,13 +160,6 @@
 			 <article>
 				Onze reis van de Aarde naar de maan kost ons 8 maanden. SpaceX zorgt ervoor dat u d.m.v. de bovenstaande tabel kunt zien hoeveel kilometer we afleggen per 2 maanden. Zo bent u altijd op de hoogte!.
 			</article>
-
-			
-			<!--<section class="aside">
-				<figure>
-					<img class="fotos" src="bezorgmannetje.png" alt="bezorgmannetje">
-			</figure>
-			</section>-->
 		</header>
 		<section class="afstand">
 			<article><h1>Check uw voorraden</h1></article>
@@ -174,19 +169,21 @@
 			</article>
 		</section>
 		<section  class="samenwerking">
-			<div class="raket">
-				<figure><img src="images/raket.png" alt="raket"></figure>
-			</div>
+				<figure><img src="images/raket3.png" alt="raket" class="raket" ></figure>
 			<!--<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by upklyak - www.freepik.com</a>-->
+			<!--<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by pikisuperstar - www.freepik.com</a>-->
 		</section>
 		<section  class="locatie">
 			<article><h1>Aanvulling voorraden</h1></article>
 			<div id="example5.1"></div>
+			<article>
+				Hier kunt u het aantal maanden zien wanneer de voorraad word aangevuld.
+			</article>
 		</section>
 		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 		<footer>
 				<div class="footer-logo">
-					<a href="index.html"><img src="images/logo.png" alt="logo" width="140px"  /></a>
+					<figure><img src="images/logo.png" alt="logo" class="logo"></figure>
 				</div>
 		</footer>
 	</body>

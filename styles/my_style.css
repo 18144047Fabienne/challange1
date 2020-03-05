@@ -24,6 +24,15 @@ body {
 		"locatie"
 		"footer";
 }
+.raket {
+	position: relative;
+	width: 500px;
+}
+.raket2 {
+	position: relative;
+	width: 300px;
+	padding-left: 10px;
+	}
 .locatie h1{
 	text-align: left;
 }
@@ -33,14 +42,12 @@ body {
 
 /*navigatie*/
 
-
 nav {
 	grid-area: nav;
 	display: block;
-	margin: 10px 0px 10px 0px;
+	margin: 30px;
 }
 nav ul {
-  margin: 15px;
   padding: 0;
   display: flex;
   justify-content: left;
@@ -48,49 +55,40 @@ nav ul {
 nav ul li{
   list-style: none;
   background-color: #A7A5CA;
+  	margin: 0px 15px 0px 0px;
   padding: 15px 30px 15px 30px;
-  margin: 5px;
   border-radius: 25px;
 }
+nav ul li:hover{
+	background-color: #7777A0;
+	-webkit-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
+	-moz-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
+	box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
+}
 nav ul li a{
-  color: white;
-  text-decoration: none;
+	font-family: 'Teko', sans-serif;
+	color: white;
+	text-decoration: none;
+	font-size: 1.5em;
 }
 a {
 	color: white;
 	text-decoration: none;
 }
-a:hover {
-	text-decoration: underline;
-}
-.menu li{
-	z-index: 99;
-	font-size: 16px;
-	padding: 15px 5px;
-	background-color: #333;
-}
-.menu li a{
-	display: block;
-}
 .logo {
 	grid-area: logo;
-	margin: 15px;
+	margin: 30px;
 	width: 200px;
 	height: 80px;
+	display: flex;
 	justify-content: center;
 }
 
 /*eind navigatie*/
 
-h1 {
-	font-family: 'Bree Serif', serif;
-	font-size: 28px;
-	line-height: 42px;
-	padding: 10px 0px 10px 0;
-}
 header {
 	grid-area: header;
-	margin: 15px;
+	margin: 30px;
 	background-color: #1E1D31;
 	border-radius: 10px;
 	-webkit-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
@@ -106,13 +104,6 @@ header div {
 }
 /*content*/
 
-.buttons {
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-between;
-	align-items: center;
-}
-
 section {
 	display: flex;
 	flex-direction: column;
@@ -120,12 +111,12 @@ section {
 article {
 	padding: 20px;
 	font-family: Arial;
-	font-size: 18px;
+	font-size: 1.125em;
 	line-height: 28px;
 }
 .afstand {
 	grid-area: afstand;
-	margin: 15px;
+	margin: 30px;
 	background-color: #1E1D31;
 	border-radius: 10px;
 	-webkit-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
@@ -134,7 +125,7 @@ article {
 }
 .samenwerking {
 	grid-area: samenwerking;
-		margin: 15px;
+	margin: 30px;
 	background-color: #1E1D31;
 	border-radius: 10px;
 	-webkit-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
@@ -144,7 +135,8 @@ article {
 
 .locatie {
 	grid-area: locatie;
-	margin: 15px;
+	margin: 30px;
+	padding: 15px;
 	background-color: #1E1D31;
 	border-radius: 10px;
 	-webkit-box-shadow: 0px 6px 24px -6px rgba(0,0,0,1);
@@ -153,7 +145,7 @@ article {
 }
 
 h1 {
-	font-family: 'Bree Serif', serif;
+	font-family: 'Teko', sans-serif;
 	font-size: 28px;
 	line-height: 42px;
 	padding: 10px 0px 10px 0;
@@ -164,23 +156,6 @@ h1 {
 
 /*buttons*/
 
-.hoofdbutton {
-	background-color: #44A23F;
-	padding: 20px 30px 20px 30px;
-	margin: 20px;
-	font-family: Arial;
-	font-size: 21px;
-	border-style: none;
-	color: white;
-	-webkit-box-shadow: 7px 9px 19px -6px rgba(0,0,0,0.34);
-	-moz-box-shadow: 7px 9px 19px -6px rgba(0,0,0,0.34);
-	box-shadow: 7px 9px 19px -6px rgba(0,0,0,0.34);
-}
-.hoofdbutton:hover{
-	background-color: white;
-	border:2px solid #44A23F;
-	color: black;
-}
 #myBtn {
   display: none; 
   position: fixed; 
@@ -189,7 +164,7 @@ h1 {
   z-index: 99; 
   border: none; 
   outline: none; 
-  background-color: #333333; 
+  background-color: #A7A5CA; 
   color: white; 
   padding: 15px; 
   border-radius: 5px; 
@@ -200,14 +175,7 @@ h1 {
   background-color: #00F8FF;
   cursor: pointer;
 }
-.button.cart {
-	padding:0;
-	background:transparent;
-}
-.button.search{
-	padding:5px 20px;
-	background:transparent;
-}
+
 
 /*eind buttons*/
 
@@ -216,7 +184,7 @@ h1 {
 footer{
 	grid-area: footer;
 	background-color: #0E0E1F;
-		margin: 15px;
+	margin: 15px;
 	padding: 0;
 	display: flex;
 	justify-content: left;
@@ -231,8 +199,8 @@ footer{
 	body {
 		grid-template-rows:  100px 100px 1fr 1fr 1fr 100px;
 		grid-template-columns:  1fr 1fr;
-		grid-template-areas: 
-			"logo logo"
+		grid-template-areas:
+			"logo logo" 
 			"nav nav"
 			"header header"
 			"afstand samenwerking"
@@ -274,6 +242,14 @@ footer{
 		padding: 20px;
 		align-items: flex-start;
 	}
+	.raket {
+		position: relative;
+		width: 800px;
+	}
+	.raket2 {
+	position: relative;
+	width: 500px;
+	}
 
 }
 
@@ -285,7 +261,7 @@ footer{
 		text-align: left;
 	}
 	article {
-		font-size: 24px;
+		font-size: 1.125em;
 		line-height: 32px;
 	}
 	.locatie img{
